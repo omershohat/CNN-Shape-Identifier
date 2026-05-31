@@ -15,7 +15,6 @@ The application demonstrates real-time client-side inference and training. It is
 * **Interactive Canvas**: Users can draw in real-time, and the canvas data is automatically normalized and downsampled to a 28x28 grayscale matrix for the network input.
 
 ## How to Run
----
 You can view and test the live model directly in your browser here:
 **[Live Demo: CNN Shape Identifier](https://omershohat.github.io/CNN-Shape-Identifier/)**
 
