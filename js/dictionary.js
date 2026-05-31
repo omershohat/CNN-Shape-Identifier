@@ -217,6 +217,8 @@ const terms = [
   }
 ];
 
+terms.sort((a, b) => a.term.localeCompare(b.term));
+
 const dictionaryList = document.getElementById("dictionaryList");
 const termCount = document.getElementById("termCount");
 const searchInput = document.getElementById("searchInput");
