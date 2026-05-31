@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DeepShape | AI Glossary</title>
+    <link rel="stylesheet" href="css/app.css" />
+  </head>
+  <body>
+    <header>
+      <h1>DeepShape Glossary</h1>
+      <p>A comprehensive dictionary of Deep Learning, CNNs, and Training concepts</p>
+      
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Network Sandbox</a>
+        <a class="active" href="dictionary.html">AI Glossary</a>
+      </nav>
+    </header>
+
+    <main class="page">
+      <section class="panel">
+        <div class="dictionary-controls">
+          <input
+            id="searchInput"
+            class="search-box"
+            type="search"
+            placeholder="Search for CNN, Epoch, Backpropagation..."
+            aria-label="Search terms"
+          />
+          <div class="term-count">
+            <span id="termCount" class="status-pill">0 terms</span>
+          </div>
+        </div>
+
+        <div id="dictionaryList" class="dictionary-grid">
+          <!-- Terms injected via JS -->
+        </div>
+      </section>
+    </main>
+
+    <script src="js/dictionary.js"></script>
+  </body>
+</html>

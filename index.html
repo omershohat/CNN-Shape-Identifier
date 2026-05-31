@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DeepShape | Neural Network Visualizer</title>
+    <link rel="stylesheet" href="css/app.css" />
+  </head>
+  <body>
+    <header>
+      <h1>DeepShape CNN</h1>
+      <p>Interactive Convolutional Neural Network trained in your browser</p>
+      
+      <nav class="nav-links" aria-label="Main navigation">
+        <a class="active" href="index.html">Network Sandbox</a>
+        <a href="dictionary.html">AI Glossary</a>
+      </nav>
+    </header>
+
+    <main class="page">
+      <div class="main-grid">
+        <!-- Drawing Panel -->
+        <section class="panel draw-panel">
+          <div class="panel-title">
+            <span class="step-label">Input Layer</span>
+            <h2 id="draw-title">Draw a Shape</h2>
+            <div id="storageStatus" class="status-pill">LocalStorage: Checking...</div>
+          </div>
+
+          <p class="small-note">
+            Draw a <strong>Circle</strong>, <strong>Square</strong>, or <strong>Triangle</strong>. 
+            The canvas automatically scales to a 28x28 matrix for the CNN.
+          </p>
+
+          <canvas
+            id="drawingCanvas"
+            width="280"
+            height="280"
+            aria-label="Interactive drawing surface"
+          ></canvas>
+
+          <div class="button-row">
+            <button id="clearCanvasBtn" type="button" class="secondary">
+              Clear Surface
+            </button>
+            <button id="predictBtn" type="button" class="primary">
+              Predict
+            </button>
+          </div>
+        </section>
+
+        <!-- Hyperparameter Panel -->
+        <section class="panel controls-panel">
+          <div class="panel-title">
+            <span class="step-label">Hidden Layers</span>
+            <h2 id="controls-title">Architecture Setup</h2>
+          </div>
+
+          <p class="small-note">
+            Adjust the hyperparameters of the CNN before initializing the training phase.
+          </p>
+
+          <div class="control-grid">
+            <label>
+              <span>Conv Layers</span>
+              <input id="convLayersInput" type="number" min="1" max="3" step="1" value="2" />
+            </label>
+
+            <label>
+              <span>Filters (per layer)</span>
+              <input id="filtersInput" type="number" min="2" max="16" step="1" value="12" />
+            </label>
+
+            <label>
+              <span>Kernel Size</span>
+              <select id="filterSizeInput">
+                <option value="3" selected>3×3</option>
+                <option value="5">5×5</option>
+                <option value="7">7×7</option>
+              </select>
+            </label>
+
+            <label>
+              <span>Dense Neurons</span>
+              <input id="hiddenInput" type="number" min="4" max="128" step="1" value="64" />
+            </label>
+
+            <label>
+              <span>Learning Rate (η)</span>
+              <input id="learningRateInput" type="number" min="0.0001" max="0.1" step="0.0001" value="0.001" />
+            </label>
+
+            <label>
+              <span>Epochs</span>
+              <input id="epochsInput" type="number" min="1" max="200" step="1" value="120" />
+            </label>
+          </div>
+
+          <div class="button-grid">
+            <button id="trainBtn" type="button" class="primary">Initialize & Train</button>
+            <button id="testBtn" type="button" class="secondary">Benchmark Model</button>
+            <button id="freshModelBtn" type="button" class="danger">Randomize Weights</button>
+            <button id="resetBtn" type="button" class="secondary">Load Baseline</button>
+          </div>
+
+          <div id="modelInfo" class="info-box">
+            Loading architecture metrics...
+          </div>
+        </section>
+
+        <!-- Results Panel -->
+        <section class="panel results-panel">
+          <div class="panel-title">
+            <span class="step-label">Output Layer</span>
+            <h2 id="results-title">Predictions & Logs</h2>
+          </div>
+
+          <div id="predictionResult" class="prediction-box">
+            Awaiting input matrix for classification.
+          </div>
+
+          <div id="probabilityBars" class="bars"></div>
+
+          <h3 style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 1rem;">Console Output</h3>
+          <pre id="trainingLog" class="log">System online.</pre>
+        </section>
+      </div>
+    </main>
+
+    <script src="js/pretrained-model.js"></script>
+    <script src="js/cnn.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
