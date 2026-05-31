@@ -1,4 +1,4 @@
-# DeepShape: Vanilla JS CNN Model
+# CNN Shape Identifier: Vanilla JS CNN Model
 
 This project is a browser-based Convolutional Neural Network (CNN) built entirely in **Vanilla JavaScript**, without the use of any external machine learning libraries (like TensorFlow.js). 
 
