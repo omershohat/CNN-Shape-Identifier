@@ -14,8 +14,11 @@ The application demonstrates real-time client-side inference and training. It is
 * **Modern UI**: Designed with custom CSS (Glassmorphism, Dark Theme) for an intuitive and impressive user experience.
 * **Interactive Canvas**: Users can draw in real-time, and the canvas data is automatically normalized and downsampled to a 28x28 grayscale matrix for the network input.
 
-## How to Run
-Simply open `index.html` in any modern web browser. No local server or build tools (like npm/webpack) are required.
+### How to Run
+You can view and test the live model directly in your browser here:
+**[Live Demo: CNN Shape Identifier](https://omershohat.github.io/CNN-Shape-Identifier/)**
+
+Alternatively, you can simply open `index.html` locally in any modern web browser. No local server or build tools (like npm/webpack) are required.
 
 ## Directory Structure
 * `index.html` - The CNN model sandbox and drawing canvas.
